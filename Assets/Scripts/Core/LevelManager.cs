@@ -15,7 +15,7 @@ namespace Rhodos.Core
         private void Start()
         {
             ActiveLevel = CreateLevel();
-            GameManager.I.Managers.MechanicManager.mechanics = ActiveLevel.LevelMechanics;
+            //GameManager.I.Managers.MechanicManager.mechanics = ActiveLevel.LevelMechanics;
         }
 
         /// <summary>
