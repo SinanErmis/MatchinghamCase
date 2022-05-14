@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Rhodos.Core;
 using Rhodos.Mechanics.Bases;
@@ -12,34 +13,49 @@ namespace Rhodos.Mechanics.Runner
     {
         [SerializeField] private float sensitivity;
         [SerializeField] private PlayerServicesLocator player;
-
+        [SerializeField] private float animationThreshold = 20f;
+        
         public override IEnumerator OnStart()
         {
             StartTakingInput();
             BindCameraToPlayer();
-            player.PlayerMovement.IsMovingForward = true;
-            
+            StartMovingPlayerForward();
+            StartCoroutine(Managers.I.UIManager.ChangeUI(null));
             yield break;
         }
 
         protected override void SwipeAction(Vector2 swipe)
         {
+            var horizontalMovement = swipe.x;
+            HandlePlayerHorizontalMovement(horizontalMovement);
+            if(horizontalMovement > animationThreshold) player.PlayerAnimationController.HandleHorizontalAnimation(horizontalMovement);
+        }
+
+        private void HandlePlayerHorizontalMovement(float horizontalMovement)
+        {
             //! don't multiply swipe.x by Time.deltaTime because
             //! the swipe vector represents the difference since the last frame 
+            
+            player.PlayerMovement.MoveHorizontal(horizontalMovement * sensitivity);
 
-            var horizontalMovement = swipe.x * sensitivity;
-            player.PlayerMovement.MoveHorizontal(horizontalMovement);
         }
-        
+
         private void StartTakingInput()
         {
             //? CanPlay parameter activates input taking, maybe should be renamed to TakeInput later
             CanPlay = true;
         }
+
         private void BindCameraToPlayer()
         {
             // Given an arbitrary speed, 5f is fine
             StartCoroutine(Managers.I.CameraManager.BindTargetTransform(player.CameraTarget, 5f));
+        }
+        
+        private void StartMovingPlayerForward()
+        {
+            player.PlayerAnimationController.SetForwardMovement(true);
+            player.PlayerMovement.IsMovingForward = true;
         }
     }
 }
