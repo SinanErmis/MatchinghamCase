@@ -5,6 +5,6 @@ namespace Rhodos
 {
     public class Level : MonoBehaviour
     {
-        [field : SerializeField] public Mechanic[] LevelMechanics { get; private set; }
+        //! hold level specific data here
     }
 }

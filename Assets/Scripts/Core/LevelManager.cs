@@ -1,5 +1,4 @@
-﻿using Rhodos.Mechanics.Bases;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Rhodos.Core
@@ -9,27 +8,34 @@ namespace Rhodos.Core
         [SerializeField] private Level[] allLevels;
         [SerializeField] private Level testLevel;
         [SerializeField] private Transform levelHolder;
-
+        [SerializeField] private ProceduralLevelGenerator proceduralLevelGenerator;
+        
+        [Tooltip("Used for giving player a fresh start")]
+        [SerializeField] private float startBreatheRoom = 8f;
+        
         public static Level ActiveLevel { get; private set; }
 
         private void Start()
         {
             ActiveLevel = CreateLevel();
-            //GameManager.I.Managers.MechanicManager.mechanics = ActiveLevel.LevelMechanics;
         }
-
-        /// <summary>
-        /// Creates test level if exists, otherwise creates next level.
-        /// </summary>
-        /// <returns></returns>
+        
         private Level CreateLevel()
         {
-            Level level = Instantiate(testLevel != null ? testLevel : allLevels[SaveLoadManager.GetLevel() % allLevels.Length],
-                levelHolder);
-            return level;
+            if (testLevel != null)
+            {
+                return Instantiate(testLevel,levelHolder);
+            }
+
+            var levelIndex = SaveLoadManager.GetLevel();
+            if (levelIndex < allLevels.Length)
+            {
+                return Instantiate(allLevels[levelIndex], levelHolder);
+            }
+
+            return proceduralLevelGenerator.Generate(levelHolder, startBreatheRoom);
         }
 
         public static void RestartScene() => SceneManager.LoadScene("Game");
     }
-
 }

@@ -20,7 +20,16 @@ namespace Rhodos.Mechanics.Runner
             StartTakingInput();
             BindCameraToPlayer();
             StartMovingPlayerForward();
+            StartCoroutine(player.PlayerShootingHandler.ShootContinuously());
             StartCoroutine(Managers.I.UIManager.ChangeUI(null));
+            yield break;
+        }
+
+        public override IEnumerator OnFail()
+        {
+            CanPlay = false;
+            player.PlayerAnimationController.SetTrigger(PlayerAnimationController.Trigger.Die);
+            StopMovingPlayerForward();
             yield break;
         }
 
@@ -56,6 +65,11 @@ namespace Rhodos.Mechanics.Runner
         {
             player.PlayerAnimationController.SetForwardMovement(true);
             player.PlayerMovement.IsMovingForward = true;
+        }        
+        private void StopMovingPlayerForward()
+        {
+            player.PlayerAnimationController.SetForwardMovement(false);
+            player.PlayerMovement.IsMovingForward = false;
         }
     }
 }

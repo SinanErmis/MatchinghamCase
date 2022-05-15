@@ -1099,10 +1099,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a88751934645aa96c632751456515b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allLevels:
-  - {fileID: 8297787615059747988, guid: d7b030a6fa553514fa7ca69f7f09ccac, type: 3}
+  allLevels: []
   testLevel: {fileID: 0}
   levelHolder: {fileID: 403074438}
+  proceduralLevelGenerator: {fileID: 11400000, guid: e37aa7a8347cc486fa54a54745b57bcd, type: 2}
 --- !u!1 &1119561344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,6 +1297,10 @@ GameObject:
   - component: {fileID: 1199289320}
   - component: {fileID: 1199289319}
   - component: {fileID: 1199289322}
+  - component: {fileID: 1199289323}
+  - component: {fileID: 1199289325}
+  - component: {fileID: 1199289324}
+  - component: {fileID: 1199289326}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1332,6 +1336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <PlayerMovement>k__BackingField: {fileID: 1199289319}
   <PlayerAnimationController>k__BackingField: {fileID: 1199289322}
+  <PlayerShootingHandler>k__BackingField: {fileID: 1199289323}
   <CameraTarget>k__BackingField: {fileID: 1541572917}
 --- !u!4 &1199289321
 Transform:
@@ -1365,6 +1370,63 @@ MonoBehaviour:
   animator: {fileID: 1966669100}
   inputNormalizationFactorForAnimation: 20
   horizontalMovementSmoothingFactor: 3
+--- !u!114 &1199289323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199289318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a672ae94359d488ba7869443bdaa0730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletStartingPoint: {fileID: 1911062399}
+  bulletSpeed: 10
+--- !u!136 &1199289324
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199289318}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.22310238
+  m_Height: 1.8230819
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9019652, z: 0}
+--- !u!114 &1199289325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199289318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6834b59b64c247c780254675516b0d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  failCollider: {fileID: 1199289324}
+--- !u!54 &1199289326
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199289318}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1001 &1202958401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1828,6 +1890,39 @@ MonoBehaviour:
     <LevelManager>k__BackingField: {fileID: 1110746547}
     <MechanicManager>k__BackingField: {fileID: 1119561346}
     <SaveLoadManager>k__BackingField: {fileID: 701198327}
+  <Assets>k__BackingField:
+    <BulletPrefab>k__BackingField: {fileID: 1815546963735134633, guid: 58a524c4083764d6cbb52ae8b69f40c8, type: 3}
+--- !u!1 &1911062398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1911062399}
+  m_Layer: 0
+  m_Name: BulletStartingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1911062399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911062398}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.061, z: 0.177}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1202958402}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1966669100 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95841064056441438, guid: 68617247be1cad64d8dfe7e3cbbb3174, type: 3}

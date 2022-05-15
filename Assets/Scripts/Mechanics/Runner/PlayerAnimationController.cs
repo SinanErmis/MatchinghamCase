@@ -35,6 +35,11 @@ namespace Rhodos.Mechanics.Runner
             animator.SetFloat(ForwardMovementHash, isMoving ? 1f : 0f);
         }
 
+        public void SetTrigger(Trigger trigger)
+        {
+            animator.SetTrigger(trigger.ToString());
+        }
+
         //todo: rewrite this logic in a more elegant way
         private void LateUpdate()
         {
@@ -47,6 +52,11 @@ namespace Rhodos.Mechanics.Runner
             
             _horizontalMovement = Mathf.Lerp(_horizontalMovement, 0f, Time.deltaTime * horizontalMovementSmoothingFactor);
             SetHorizontalMovement(_horizontalMovement);
+        }
+
+        public enum Trigger
+        {
+            Die,
         }
     }
 }

@@ -9,6 +9,7 @@ namespace Rhodos.Mechanics.Runner
     {
         [field: SerializeField] public PlayerMovement PlayerMovement { get; private set; }
         [field: SerializeField] public PlayerAnimationController PlayerAnimationController { get; private set; }
+        [field: SerializeField] public PlayerShootingHandler PlayerShootingHandler { get; private set; }
         [field: SerializeField] public Transform CameraTarget { get; private set; }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections;
 using NaughtyAttributes;
 using Rhodos.Mechanics.Bases;
+using Rhodos.Mechanics.Runner;
 using UnityEngine;
 
 namespace Rhodos.Core
@@ -90,6 +91,8 @@ namespace Rhodos.Core
     {
         public static Assets I => GameManager.I.Assets;
         //Place your static-reachable assets here. 
+
+        [field: SerializeField] public Bullet BulletPrefab { get; private set; }
     }
     [Serializable]
     public class References

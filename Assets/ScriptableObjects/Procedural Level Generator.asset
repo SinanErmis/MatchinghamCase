@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748247bf74b745a788d1a62df3430df0, type: 3}
+  m_Name: Procedural Level Generator
+  m_EditorClassIdentifier: 
+  stages:
+  - {fileID: 2463617639539115767, guid: 1c0d3c0e30df14bc98274c32fa4eb0ad, type: 3}
+  - {fileID: 6687109711890630181, guid: 0f3e33338e9f649e4903c3f6ec7dbcbb, type: 3}
+  - {fileID: 1061182786564565461, guid: 00aa41372a713442dbbd00fcc0f30828, type: 3}
+  - {fileID: 7372788625601420929, guid: db2b68e16af1f4e309dff27d83795432, type: 3}
+  - {fileID: 5253427973705430013, guid: db377791ccdba435e96fa5301a898fc6, type: 3}
+  - {fileID: 7172291316201015214, guid: 43f3f3101f1ec4d2dbc2434818c280fa, type: 3}
+  maxObstacleCount: 220
+  minObstacleCount: 180
