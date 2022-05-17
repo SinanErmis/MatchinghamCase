@@ -1099,10 +1099,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a88751934645aa96c632751456515b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allLevels: []
+  allLevels:
+  - {fileID: 4979026354941590659, guid: 8c9bea577b56d44c5bc22c69d9f91045, type: 3}
+  - {fileID: 126109957634492956, guid: e30d14775853e4d28896fff582cbaa41, type: 3}
   testLevel: {fileID: 0}
   levelHolder: {fileID: 403074438}
   proceduralLevelGenerator: {fileID: 11400000, guid: e37aa7a8347cc486fa54a54745b57bcd, type: 2}
+  startBreatheRoom: 8
 --- !u!1 &1119561344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,7 +1306,7 @@ GameObject:
   - component: {fileID: 1199289326}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1384,6 +1387,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletStartingPoint: {fileID: 1911062399}
   bulletSpeed: 10
+  salvoInterval: 0.4
+  firingInterval: 0.1
 --- !u!136 &1199289324
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1883,7 +1888,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canPlay: 0
-  gameType: 1
   <Managers>k__BackingField:
     <CameraManager>k__BackingField: {fileID: 52055256}
     <UIManager>k__BackingField: {fileID: 2074460901}
@@ -2107,7 +2111,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 520}
-  m_SizeDelta: {x: 400, y: 200}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &2124276872 stripped
 Transform:

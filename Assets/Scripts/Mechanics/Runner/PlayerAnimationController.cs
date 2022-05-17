@@ -57,6 +57,7 @@ namespace Rhodos.Mechanics.Runner
         public enum Trigger
         {
             Die,
+            Dance
         }
     }
 }

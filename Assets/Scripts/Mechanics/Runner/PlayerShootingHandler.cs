@@ -11,7 +11,7 @@ namespace Rhodos.Mechanics.Runner
         [SerializeField] private float salvoInterval = 0.4f, firingInterval = 0.1f;
         
         private int _bulletCount = 1; //todo add upgrades
-        
+        private bool _isShooting;
         private WaitForSeconds _waitForSalvoInterval;
         private WaitForSeconds _waitForBulletFiringInterval;
         
@@ -24,7 +24,8 @@ namespace Rhodos.Mechanics.Runner
 
         public IEnumerator ShootContinuously()
         {
-            while (true) //todo replace with actual check
+            _isShooting = true;
+            while (_isShooting) 
             {
                 yield return _waitForSalvoInterval;
                 StartCoroutine(ShootMultipleTimes(_bulletCount));
@@ -45,6 +46,11 @@ namespace Rhodos.Mechanics.Runner
             bullet.transform.position = bulletStartingPoint.position;
             bullet.transform.rotation = Quaternion.LookRotation(Vector3.forward);
             bullet.StartForwardMove(bulletSpeed);
+        }
+
+        public void StopShooting()
+        {
+            _isShooting = false;
         }
     }
 }

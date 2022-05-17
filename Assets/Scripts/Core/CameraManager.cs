@@ -61,9 +61,9 @@ namespace Rhodos.Core
         }
         
         private bool _isCameraStopped;
-        [ButtonMethod] private void StopCamera() => _isCameraStopped = true;
         public IEnumerator BindTargetTransform(Transform target, float speed, bool lerpRotation = true)
         {
+            _isCameraStopped = false;
             while (!_isCameraStopped)
             {
                 yield return null;
@@ -76,6 +76,11 @@ namespace Rhodos.Core
                         Time.deltaTime * speed);
                 }
             }
+        }
+
+        public void UnbindTargetTransform()
+        {
+            _isCameraStopped = true;
         }
     }
 }

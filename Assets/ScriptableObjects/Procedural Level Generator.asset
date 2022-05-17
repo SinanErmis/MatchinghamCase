@@ -19,5 +19,6 @@ MonoBehaviour:
   - {fileID: 7372788625601420929, guid: db2b68e16af1f4e309dff27d83795432, type: 3}
   - {fileID: 5253427973705430013, guid: db377791ccdba435e96fa5301a898fc6, type: 3}
   - {fileID: 7172291316201015214, guid: 43f3f3101f1ec4d2dbc2434818c280fa, type: 3}
-  maxObstacleCount: 220
-  minObstacleCount: 180
+  endStage: {fileID: 8041924647601668815, guid: faf92c79fa990479ea5732d69f3de9d2, type: 3}
+  maxObstacleCount: 50
+  minObstacleCount: 40

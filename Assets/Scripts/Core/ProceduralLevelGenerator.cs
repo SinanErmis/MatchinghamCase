@@ -7,6 +7,8 @@ namespace Rhodos.Core
     public class ProceduralLevelGenerator : ScriptableObject
     {
         [SerializeField] private LevelStage[] stages;
+        [SerializeField] private LevelStage endStage;
+        
         [SerializeField] private int maxObstacleCount = 220, minObstacleCount = 180;
         
         public Level Generate(Transform holder, float startSpace)
@@ -24,6 +26,9 @@ namespace Rhodos.Core
                 length += stage.Length;
                 currentObstacleCount += stage.ObstacleCount;
             }
+
+            Instantiate(endStage, level.transform).transform.position = Vector3.forward * length;
+            
             return level;
         }
     }

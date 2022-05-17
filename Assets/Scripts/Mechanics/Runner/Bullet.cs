@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using Rhodos.Core;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -7,14 +9,13 @@ namespace Rhodos.Mechanics.Runner
     public class Bullet : MonoBehaviour
     {
         [SerializeField] private new Rigidbody rigidbody;
+        [SerializeField] private float poolReturnDuration = 10f;
         
         #region Pooling
         public static ObjectPool<Bullet> Pool { get; private set; }
         
         public static void InitializePool()
         {
-            if (Pool != null) return;
-            
             Pool = new ObjectPool<Bullet>(
                 InstantiateBullet,
                 (b) => b.gameObject.SetActive(true),
@@ -23,7 +24,23 @@ namespace Rhodos.Mechanics.Runner
         }
 
         private static Bullet InstantiateBullet() => Instantiate<Bullet>(Assets.I.BulletPrefab);
-        
+
+        private void OnEnable()
+        {
+            StartCoroutine(ReturnToPoolAfterTime());
+        }
+
+        private IEnumerator ReturnToPoolAfterTime()
+        {
+            var timer = 0f;
+            while (timer<poolReturnDuration)
+            {
+                yield return null;
+                timer += Time.deltaTime;
+            }
+            Pool.Release(this);
+        }
+
         #endregion
 
         private void OnTriggerEnter(Collider other)
@@ -34,6 +51,7 @@ namespace Rhodos.Mechanics.Runner
             
             var obstacle = other.GetComponent<Obstacle>();
             obstacle.OnGetShot();
+            StopAllCoroutines(); //Stop all coroutines to avoid any conflict with ReturnPoolAfterTime method.
             Pool.Release(this);
         }
 

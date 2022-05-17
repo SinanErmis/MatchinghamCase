@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using DG.Tweening;
 using Rhodos.Core;
 using Rhodos.Mechanics.Bases;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace Rhodos.Mechanics.Runner
         [SerializeField] private float sensitivity;
         [SerializeField] private PlayerServicesLocator player;
         [SerializeField] private float animationThreshold = 20f;
+        private static readonly WaitForSeconds END_DURATION = new WaitForSeconds(2f);
         
         public override IEnumerator OnStart()
         {
@@ -25,12 +27,33 @@ namespace Rhodos.Mechanics.Runner
             yield break;
         }
 
+        public override IEnumerator OnEnd()
+        {
+            CanPlay = false;
+            StopShooting();
+            yield return END_DURATION;
+            StopMovingPlayerForward();
+
+            Managers.I.CameraManager.UnbindTargetTransform();
+            //make player turn to us
+            yield return player.transform.DORotate(Vector3.up * 180f, 0.5f).SetEase(Ease.Linear).WaitForCompletion();
+            player.PlayerAnimationController.SetTrigger(PlayerAnimationController.Trigger.Dance);
+            yield return END_DURATION;
+        }
+
+
         public override IEnumerator OnFail()
         {
             CanPlay = false;
             player.PlayerAnimationController.SetTrigger(PlayerAnimationController.Trigger.Die);
             StopMovingPlayerForward();
+            StopShooting();
             yield break;
+        }
+        
+        private void StopShooting()
+        {
+            player.PlayerShootingHandler.StopShooting();
         }
 
         protected override void SwipeAction(Vector2 swipe)

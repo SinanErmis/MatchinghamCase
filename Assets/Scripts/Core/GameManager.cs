@@ -13,7 +13,6 @@ namespace Rhodos.Core
     public class GameManager : MonoBehaviour
     {
         public bool canPlay;
-        public GameType gameType;
 
         [field: SerializeField] public Managers Managers { get; private set; }
         [field: SerializeField] public Assets Assets { get; private set; }
@@ -67,12 +66,6 @@ namespace Rhodos.Core
                 yield return StartCoroutine(Managers.MechanicManager.ActiveMechanic.OnFail());
                 StartCoroutine(Managers.UIManager.ChangeUI(UIManager.MainScreens.Fail));
             }
-        }
-
-        public enum GameType
-        {
-            UniqueLevels,
-            UniqueMechanics
         }
     }
 
