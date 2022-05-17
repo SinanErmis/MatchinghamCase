@@ -5,27 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="970759dd-02a4-49c0-a9ee-6c98917790e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LevelEnder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LevelEnder.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/Weapon.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/Weapon.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/WeaponUpgradeHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/WeaponUpgradeHandler.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MatchinghamCase/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MatchinghamCase/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/PlayerAnimatorController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/PlayerAnimatorController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UpperBodyMask.mask" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UpperBodyMask.mask.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level_000.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level_000.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level (0).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level (0).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level (1).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level (1).prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Procedural Level Generator.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Procedural Level Generator.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/CameraManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/ProceduralLevelGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/ProceduralLevelGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/Bullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/PlayerAnimationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/PlayerAnimationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/PlayerServicesLocator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/PlayerServicesLocator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/PlayerShootingHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/PlayerShootingHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/RunnerMechanic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/RunnerMechanic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +30,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/RunnerMechanic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelEnder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mechanics/Runner/PlayerServicesLocator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEngine.TestRunner/TestRunner/Callbacks/PlayerQuitHandler.cs" root0="SKIP_HIGHLIGHTING" />
   </component>

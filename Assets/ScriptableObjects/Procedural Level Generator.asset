@@ -20,5 +20,8 @@ MonoBehaviour:
   - {fileID: 5253427973705430013, guid: db377791ccdba435e96fa5301a898fc6, type: 3}
   - {fileID: 7172291316201015214, guid: 43f3f3101f1ec4d2dbc2434818c280fa, type: 3}
   endStage: {fileID: 8041924647601668815, guid: faf92c79fa990479ea5732d69f3de9d2, type: 3}
-  maxObstacleCount: 50
-  minObstacleCount: 40
+  weaponUpgradeStages:
+  - {fileID: 8650839245100347767, guid: 85ebae671a01c467786e3a691a49a1c0, type: 3}
+  - {fileID: 1846389123224931208, guid: a92050f060a0b4401af90fdb0bc1bf02, type: 3}
+  maxObstacleCount: 180
+  minObstacleCount: 220

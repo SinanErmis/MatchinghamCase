@@ -10,7 +10,7 @@ namespace Rhodos.Mechanics.Runner
         [SerializeField] [Tooltip("Meters per second")] private float bulletSpeed;
         [SerializeField] private float salvoInterval = 0.4f, firingInterval = 0.1f;
         
-        private int _bulletCount = 1; //todo add upgrades
+        private int _bulletCount = 1;
         private bool _isShooting;
         private WaitForSeconds _waitForSalvoInterval;
         private WaitForSeconds _waitForBulletFiringInterval;
@@ -51,6 +51,16 @@ namespace Rhodos.Mechanics.Runner
         public void StopShooting()
         {
             _isShooting = false;
+        }
+
+        public void SetShotCount(int count)
+        {
+            _bulletCount = count;
+        }
+
+        public void SetBulletStartingPoint(Transform point)
+        {
+            bulletStartingPoint = point;
         }
     }
 }
